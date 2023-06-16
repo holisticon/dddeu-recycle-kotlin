@@ -1,17 +1,10 @@
 package com.dddeurope.recycle.spring
 
-import com.dddeurope.recycle.command.CalculatePrice
-import com.dddeurope.recycle.command.CommandMessage
-import com.dddeurope.recycle.events.Event
 import com.dddeurope.recycle.events.EventMessage
 import com.dddeurope.recycle.events.PriceWasCalculated
 import mu.KLogging
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.util.*
 
 
@@ -48,22 +41,4 @@ class MainController {
             )
         )
     }
-
-    private fun eventsOf(request: RecycleRequest): List<Event> = request.history
-        .map { it.payload }
-
-    private fun commandOf(request: RecycleRequest): CalculatePrice = request.command.payload as CalculatePrice
-
-    data class RecycleRequest(
-        val history: List<EventMessage>,
-        val command: CommandMessage
-    ) {
-
-        fun asString(): String {
-            val historyAsString = history.joinToString("\n\t") { it.toString() }
-
-            return String.format("%n%s %nWith History\n\t%s", command, historyAsString)
-        }
-    }
-
 }

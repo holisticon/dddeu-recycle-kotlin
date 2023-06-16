@@ -1,28 +1,33 @@
 package com.dddeurope.recycle.domain
 
 import com.dddeurope.recycle.events.*
-import java.util.*
 
 
-class PriceCalculator(events: List<Event>) {
-    constructor(vararg events: Event) : this(Arrays.stream<Event>(events).toList())
+class PriceCalculator(vararg events: Event) {
 
     init {
-        for (event in events) handle(event)
+        events.forEach {
+            handle(it)
+        }
     }
 
     private fun handle(event: Event) {
-        if (event is IdCardRegistered) {
-            // do something with cardRegistered
-        }
-        if (event is IdCardScannedAtEntranceGate) {
-            // do something with cardScanned
-        }
-        if (event is FractionWasDropped) {
-            // do something with fractionDropped
-        }
-        if (event is IdCardScannedAtExitGate) {
-            // do something with cardRegistered
+        when (event) {
+            is IdCardRegistered -> {
+                // do something with cardRegistered
+            }
+
+            is IdCardScannedAtEntranceGate -> {
+                // do something with cardScanned
+            }
+
+            is FractionWasDropped -> {
+                // do something with fractionDropped
+            }
+
+            is IdCardScannedAtExitGate -> {
+                // do something with cardRegistered
+            }
         }
     }
 
