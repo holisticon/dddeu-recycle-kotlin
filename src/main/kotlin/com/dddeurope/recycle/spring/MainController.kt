@@ -1,5 +1,6 @@
 package com.dddeurope.recycle.spring
 
+import com.dddeurope.recycle.domain.PriceCalculator
 import com.dddeurope.recycle.events.EventMessage
 import com.dddeurope.recycle.events.PriceWasCalculated
 import mu.KLogging
@@ -25,15 +26,18 @@ class MainController {
         logger.info("Incoming Request: {}", request.asString())
 
         // If you have no inspiration to start implementing, uncomment this part:
-        // PriceCalculator calculator = new PriceCalculator(eventsOf(request));
-        // CalculatePrice command = commandOf(request);
-        // double amount = calculator.calculatePrice(command.cardId());
-        // return ResponseEntity.ok(
-        //     EventMessage(
-        //         eventId = UUID.randomUUID().toString(),
-        //         payload = PriceWasCalculated("123", 1.0, "EUR")
-        //     )
-        // )
+        //        val calculator = PriceCalculator(*request.getEvents().toTypedArray())
+        //        val amount = request.toCalculatePriceCommand().let {
+        //            calculator.calculatePrice(it.cardId)
+        //        }
+        //
+        //        return ResponseEntity.ok(
+        //            EventMessage(
+        //                eventId = UUID.randomUUID().toString(),
+        //                payload = PriceWasCalculated("123", amount,  "EUR")
+        //            )
+        //        )
+
         return ResponseEntity.ok(
             EventMessage(
                 eventId = UUID.randomUUID().toString(),
