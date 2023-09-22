@@ -1,6 +1,6 @@
-package com.dddeurope.recycle.events
+package com.dddeurope.recycle.infrastructure.events
 
-import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.annotation.*
 import java.util.*
 
 interface Event

@@ -1,10 +1,9 @@
 package com.dddeurope.recycle.domain
 
-import com.dddeurope.recycle.events.IdCardRegistered
-import com.dddeurope.recycle.events.IdCardScannedAtEntranceGate
-import com.dddeurope.recycle.events.IdCardScannedAtExitGate
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import com.dddeurope.recycle.domain.service.*
+import com.dddeurope.recycle.infrastructure.events.*
+import org.assertj.core.api.Assertions.*
+import org.junit.jupiter.api.*
 
 
 class PriceCalculatorTest {

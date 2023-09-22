@@ -1,8 +1,7 @@
-package com.dddeurope.recycle.spring
+package com.dddeurope.recycle.infrastructure.spring
 
-import com.dddeurope.recycle.command.CalculatePrice
-import com.dddeurope.recycle.command.CommandMessage
-import com.dddeurope.recycle.events.EventMessage
+import com.dddeurope.recycle.infrastructure.command.*
+import com.dddeurope.recycle.infrastructure.events.*
 
 data class RecycleRequest(
     val history: List<EventMessage>,

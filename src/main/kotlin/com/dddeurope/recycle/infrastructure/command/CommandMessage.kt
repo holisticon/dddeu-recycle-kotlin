@@ -1,8 +1,6 @@
-package com.dddeurope.recycle.command
+package com.dddeurope.recycle.infrastructure.command
 
-import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.annotation.JsonSubTypes
-import com.fasterxml.jackson.annotation.JsonTypeInfo
+import com.fasterxml.jackson.annotation.*
 
 data class CommandMessage(
     @JsonProperty("command_id")

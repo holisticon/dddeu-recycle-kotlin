@@ -1,6 +1,6 @@
-package com.dddeurope.recycle.command
+package com.dddeurope.recycle.infrastructure.command
 
-import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.annotation.*
 import java.util.*
 
 

@@ -1,9 +1,7 @@
-package com.dddeurope.recycle.events
+package com.dddeurope.recycle.infrastructure.events
 
-import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.annotation.JsonSubTypes
-import com.fasterxml.jackson.annotation.JsonTypeInfo
-import java.time.LocalDateTime
+import com.fasterxml.jackson.annotation.*
+import java.time.*
 
 data class EventMessage(
     @JsonProperty("event_id")

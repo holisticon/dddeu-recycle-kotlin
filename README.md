@@ -27,7 +27,7 @@ Add the url you got from ngrok as a client url when asked, and validate the conn
 You are now ready to start. Follow the instructions for the exercises.
 
 ## Getting to green
-Once you get to your first failing scenario (No fractions delivered), change [MainController.kt](src/main/kotlin/com/dddeurope/recycle/spring/MainController.kt) to return `0` instead of `1`:
+Once you get to your first failing scenario (No fractions delivered), change [MainController.kt](src/main/kotlin/com/dddeurope/recycle/infrastructure/spring/MainController.kt) to return `0` instead of `1`:
 
 ``` kotlin
  return ResponseEntity.ok(
